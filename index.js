@@ -102,7 +102,6 @@ function init(){
   //创建很多个 粒子
   for(var i=0; i< P_num; i++){
     var _color = `rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`;
-    console.log(_color)
     P_array.push(new Particle(Math.random()*_width, Math.random()*_height, Math.random()*5, _color))
   }
   length = P_array.length;
