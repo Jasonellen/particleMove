@@ -19,9 +19,9 @@ function Particle(x, y, r, color){
   this.y = y;
   this.r = r;
   this.color = color;
-  this.movex = Math.random()<0.5 ? Math.random()*3 : Math.random()*-7;
-  this.movey = Math.random()<0.5 ? Math.random()*2 : Math.random()*-5;
-  console.log(this.movex, this.movey)
+  this.movex = Math.random()<0.5 ? Math.random() : -Math.random();
+  this.movey = Math.random()<0.5 ? Math.random() : -Math.random();
+  console.log(this.movex, this.movey,1)
 }
 //画圆
 Particle.prototype.draw = function () {
