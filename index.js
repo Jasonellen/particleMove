@@ -105,8 +105,9 @@ var length = 0;
 function init(){
   //创建很多个 粒子
   for(var i=0; i< P_num; i++){
-    let movex = random(0,1)*toword[random(0,1)];
-    let movey = random(0,1)*toword[random(0,1)];
+    let movex = random(0.3,1)*toword[random(0,1)];
+    let movey = random(0.3,1)*toword[random(0,1)];
+    if(movex>0 && movey<0){console.log(movex,movey)}
     var _color = `rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`;
     P_array.push(new Particle(Math.random()*_width, Math.random()*_height, Math.random()*5, _color,movex, movey))
   }
