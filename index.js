@@ -18,13 +18,13 @@ function random(a,b){
    return Math.round(Math.random()*(b-a))+a
 }
 //创建粒子对象（具有位置、半径、颜色和速度属性，画圆、运动 连线 和 远离的方法）
-function Particle(x, y, r, color){
+function Particle(x, y, r, color,movex, movey){
   this.x = x;
   this.y = y;
   this.r = r;
   this.color = color;
-  this.movex = random(0.5,1)*toword[random(0,1)];
-  this.movey = random(0.5,1)*toword[random(0,1)];
+  this.movex = movex;
+  this.movey = movey;
 }
 //画圆
 Particle.prototype.draw = function () {
@@ -105,8 +105,10 @@ var length = 0;
 function init(){
   //创建很多个 粒子
   for(var i=0; i< P_num; i++){
+    let movex = random(0,1)*toword[random(0,1)];
+    let movey = random(0,1)*toword[random(0,1)];
     var _color = `rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`;
-    P_array.push(new Particle(Math.random()*_width, Math.random()*_height, Math.random()*5, _color))
+    P_array.push(new Particle(Math.random()*_width, Math.random()*_height, Math.random()*5, _color,movex, movey))
   }
   length = P_array.length;
   //页面 动 起来
