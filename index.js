@@ -21,6 +21,7 @@ function Particle(x, y, r, color){
   this.color = color;
   this.movex = Math.random()<0.5 ? Math.random()*3 : Math.random()*-7;
   this.movey = Math.random()<0.5 ? Math.random()*2 : Math.random()*-5;
+  console.log(this.movex, this.movey)
 }
 //画圆
 Particle.prototype.draw = function () {
@@ -102,7 +103,6 @@ function init(){
   //创建很多个 粒子
   for(var i=0; i< P_num; i++){
     var _color = `rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`;
-    console.log(_color)
     P_array.push(new Particle(Math.random()*_width, Math.random()*_height, Math.random()*5, _color))
   }
   length = P_array.length;
