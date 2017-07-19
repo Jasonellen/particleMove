@@ -13,15 +13,18 @@ window.requestAnimationFrame =  window.requestAnimationFrame ||
                                 window.webkitRequestAnimationFrame ||
                                 window.msRequestAnimationFrame;
 
+var toword=[1,-1];
+function random(a,b){
+   return Math.round(Math.random()*(b-a))+a
+}
 //创建粒子对象（具有位置、半径、颜色和速度属性，画圆、运动 连线 和 远离的方法）
 function Particle(x, y, r, color){
   this.x = x;
   this.y = y;
   this.r = r;
   this.color = color;
-  this.movex = Math.random()<0.5 ? Math.random() : -Math.random();
-  this.movey = Math.random()<0.5 ? Math.random() : -Math.random();
-  console.log(this.movex, this.movey,1)
+  this.movex = random(0.5,1)*toword[random(0,1)];
+  this.movey = random(0.5,1)*toword[random(0,1)];
 }
 //画圆
 Particle.prototype.draw = function () {
