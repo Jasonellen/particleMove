@@ -36,7 +36,7 @@ Particle.prototype.line = function (other) {
   var dx = this.x - other.x;
   var dy = this.y - other.y;
   let gap = Math.sqrt(dx*dx + dy*dy)
-  if(gap < 80){
+  if(gap < 40){
     ctx.save();
     ctx.beginPath();
     ctx.moveTo(this.x, this.y);
@@ -95,7 +95,7 @@ Away.prototype.awaydraw = function () {
 
 //粒子数组 和 粒子个数
 var P_array =[];
-var P_num = 360;
+var P_num = 100;
 var length = 0;
 //初始化页面
 function init(){
